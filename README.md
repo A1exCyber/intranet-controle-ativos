@@ -1,6 +1,8 @@
-# Sistema de Controle de Ativos – Intranet
+# Sistema de Controle de Ativos – Intranet Corporativa
 
-Sistema simples para controle, locação e devolução de ativos de uma intranet corporativa.
+Sistema simples para controle, locação e devolução de ativos de uma intranet corporativa,
+desenvolvido como protótipo funcional para estudo e validação de regras de negócio.
+
 
 ## Funcionalidades
 - Cadastro de produtos
@@ -14,14 +16,16 @@ Sistema simples para controle, locação e devolução de ativos de uma intranet
 - Persistência via LocalStorage
 
 ## Tecnologias
-- HTML
-- CSS (Flexbox)
-- JavaScript (Vanilla)
+- HTML5
+- CSS3 (Flexbox)
+- JavaScript Vanilla
+- LocalStorage (simulação de persistência)
 
 ## Próximos passos
-- Migração para Spring Boot
-- Persistência em banco de dados
-- Autenticação de usuários
+- Migração para backend em Spring Boot
+- Persistência em banco de dados relacional
+- Autenticação e controle de acesso por usuário
+- API REST para integração futura
 
 ## Tela inicial
 
