@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste API</title>
+</head>
+
+<body>
+
+    <h1>Login Intranet</h1>
+
+    <form onsubmit="handleLogin(); return false;">
+        <label>Login:</label><br>
+        <input type="text" id="login" name="login" value="michaelw"><br><br>
+
+        <label>Senha:</label><br>
+        <input type="password" id="password" name="password" value="michaelwpass"><br><br><button
+            type="submit">Entrar</button>
+    </form>
+
+    <pre id="resultado">Aguardando login...</pre>
+
+    <script>
+        //console.log("JS carregado");
+
+        async function handleLogin() {
+            //console.log("Função handleLogin chamada");
+
+            const response = await fetch('https://dummyjson.com/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    username: document.getElementById('login').value,
+                    password: document.getElementById('password').value
+                })
+            });
+
+            const resultado = document.getElementById('resultado');
+
+            if (response.ok) {
+                const data = await response.json();
+
+                // salve o token...
+                localStorage.setItem("token", data.token);
+
+                // redirecionando para a página home
+                window.location.href = "home.html";
+            } else {
+                resultado.textContent = 'Erro no login';
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
